@@ -32,11 +32,8 @@ def max_end3(nums):
     largest = nums[0]
   else: 
     largest = nums[len(nums)-1]
-  # replace !
-  while counter < 3:
-    nums[counter] = largest
-    counter += 1
-  return nums
+   # replace !
+   return [largest,largest,largest] 
  
 def sum2(nums):
   counter = 0
@@ -60,10 +57,4 @@ def make_ends(nums):
   return ends
 
 def has23(nums):
-  counter = 0 
-  while counter <= 1:
-    if nums[counter] == 2 or nums[counter] == 3:
-      return True
-    else: 
-      counter +=1
-  return False
+  return (nums[0] == 2 or nums[0] == 3) or (nums[1] == 2 or nums[1] == 3)
