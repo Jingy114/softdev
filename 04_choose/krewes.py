@@ -19,6 +19,7 @@ OPS SUMMARY:
     - The next will use random to provide the index of a randomly selected dev inside of the selected class
 '''
 
+
 import random as rng
 
 krewes = {
@@ -29,11 +30,12 @@ krewes = {
 
 
 def generateRandomDev():
-    keys = list(krewes.keys())
-    randIndex = rng.randint(0, len(krewes) - 1)
+    keys = list(krewes.keys()) #creates list
+    randIndex = rng.randint(0, len(krewes) - 1) #genrate random class
     randKey = keys[randIndex]
-    fullPeriod = krewes[randKey]
+    fullPeriod = krewes[randKey] #generate random devo from that period
     selectedDevo = rng.randint(0, len(fullPeriod)-1)
     return str(randKey) + ": " + fullPeriod[selectedDevo]
 
 print( generateRandomDev() )
+
