@@ -34,6 +34,6 @@ def generateRandomDev():
     randKey = keys[randIndex]
     fullPeriod = krewes[randKey]
     selectedDevo = rng.randint(0, len(fullPeriod)-1)
-    return fullPeriod[selectedDevo]
+    return str(randKey) + ": " + fullPeriod[selectedDevo]
 
 print( generateRandomDev() )
