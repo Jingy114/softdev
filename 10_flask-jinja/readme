@@ -2,7 +2,7 @@ Drowning Jelleyfish: Jing Feng, Emily Ortiz, Lauren Lee
 SoftDev
 K09 -- Just Plug It In
 2022-10-13
-time spent: 
+time spent: 0.5
 
 Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
 A0: (prediction) render_template Function is not defined, error message in terminal
@@ -17,5 +17,9 @@ A2: For each variable in {} in HTML there will be a correspnding string stored i
 DISCO:
  {% for item in collection %}
  Logic control 
- 
+
+ <head> tag contains metadata for webpage
+
+
 QCC:
+what are other capabilities of render_template other than assignin values to variables?
