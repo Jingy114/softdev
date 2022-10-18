@@ -1,4 +1,4 @@
-JANitors: Jing Feng, Nicole Zhou, Aden Garbutt
+JANitors: Jing Feng, Nicole Zhou, Aden Garbutt <br>
 SoftDev
 K12 -- Take and Give
 2022-10-17
