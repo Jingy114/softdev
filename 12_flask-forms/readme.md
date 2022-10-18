@@ -1,8 +1,8 @@
 JANitors: Jing Feng, Nicole Zhou, Aden Garbutt <br>
-SoftDev
-K12 -- Take and Give
-2022-10-17
-time spent: 1.3 hr
+SoftDev <br>
+K12 -- Take and Give <br>
+2022-10-17<br>
+time spent: 1.3 hr<br>
 
 DISCOS: 
 * response = request.form.get('username') in app.py and {{username}} in response.html to get inputted username
