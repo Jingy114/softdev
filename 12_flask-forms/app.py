@@ -31,34 +31,37 @@ PROTIP: Insert your own in-line comments
 
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.form)
+    #print("\n\n\n")
+    #print("***DIAG: this Flask obj ***")
+    #print(app)
+    #print("***DIAG: request obj ***")
+    #print(request)
+    #print("***DIAG: request.args ***")
+    #print(request.form)
     #print("***DIAG: request.args['username']  ***")
     #print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
+    #print("***DIAG: request.headers ***")
+    #print(request.headers)
     return render_template( 'login.html' )
 
 
 @app.route("/auth" , methods=['GET', 'POST'])
 def authenticate():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.form)
+    #print("\n\n\n")
+    #print("***DIAG: this Flask obj ***")
+    #print(app)
+    #print("***DIAG: request obj ***")
+    #print(request)
+    #print("***DIAG: request.args ***")
+    #print(request.form)
     #print("***DIAG: request.args['username']  ***")
     #print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
-    return render_template ( "response.html", response = request.form.get('username')) #response to a form submission
+    #print("***DIAG: request.headers ***")
+    #print(request.headers)
+#    return render_template ( "response.html", 
+ #                             response = request.form.get('username')) #response to a form submission
+    return render_template ( "response.html", 
+                              response = request.args.get('username')) #response to a form submission
 
 
     
