@@ -1,49 +1,68 @@
-var c = getElementByID('slate');
+var c = document.getElementById("slate");
+
 
 var ctx = c.getContext("2d");
 
+
 var mode = "rect";
 
-var toggleMode = function() {
-    console.log("toggling...");
-    if (mode = 'rect') {
-        mode = 'circle';
-    } else {
-        mode = "rect";
-    }
-}
+var bToggler = document.getElementById("buttonToggle");
 
-var drawRect = function() {
-    var mouseX = ctx.offsetX;
-    var mouseY = ctx.offsetY;
-    fillRect(mouseX, mouseY, 5, 12);
-    console.log("mouseclick registered at", mouseX, mouseY);
-}
-
-var drawCircle = function() {
-    var mouseX = ctx.offsetX;
-    var mouseY = ctx.offsetY;
-    arc(mouseX, mouseY, 3, 17, 17, counterclockwise);
-    console.log("mouseClick registered at", mouseX, mouseY);
-}
-
-var draw = function(e){
-    if (mode == 'rect'){
-        drawRect();
-    }
-    else {
-        drawCircle();
-    }
+var toggleMode = (e) => {
+   console.log("toggling...");
+   if (mode === "rect") {
+       mode = "circ";
+       bToggler.innerHTML = "circ"
+   } else {
+       mode = "rect";
+       bToggler.innerHTML = "rect";
+   }
 }
 
 
-var wipeCanvas = function() {
-
+var drawRect = function(e) {
+    var mouseX = e.offsetX;
+    var mouseY = e.offsetY;
+    //console.log("mouseclick registered at ", mouseX, mouseY);
+    //console.log(e.offsetX, e.offSetY);
+    //ctx.fillStyle = "red";
+    ctx.fillRect(mouseX, mouseY, 100, 200);
 }
 
-var bToggler = getElementByID('buttonToggle');
+
+var drawCircle = (e) => {
+   var mouseX = e.offsetX;
+   var mouseY = e.offsetY;
+   console.log("mouseclick registered at ", mouseX, mouseY);
+   //console.log(e.offSetX, e.offSetY);
+   //ctx.fillStyle = "red";
+   ctx.beginPath();
+   ctx.arc(mouseX, mouseY, 20, 0, Math.PI * 2);
+   ctx.fillStyle = "red";
+   ctx.fill();
+   ctx.stroke();
+}
+var draw = (e) => {
+   if (mode === "rect") {
+       drawRect(e);
+   }
+   else {
+       drawCircle(e);
+   }
+}
+
+
+
+
+var wipeCanvas = () => {
+   ctx.clearRect(0,0,600,600);
+}
+
+
+
 
 c.addEventListener("click", draw);
 bToggler.addEventListener("click", toggleMode);
-var clearB = getElementByID('buttonClear');
+var clearB = document.getElementById('buttonClear');
 clearB.addEventListener("click", wipeCanvas);
+
