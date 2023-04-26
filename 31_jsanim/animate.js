@@ -13,8 +13,13 @@ var clear = (e) => {
 
 var radius = 0;
 var growing = true;
+var animating = false;
 
-var drawDot = () => {
+var drawDot = (e) => {
+    if (e.type == "click" && animating) {
+        return
+    }
+    animating = true;
     clear();
     requestID = window.requestAnimationFrame(drawDot);
     console.log(requestID);
@@ -42,6 +47,7 @@ var stopIt = function() {
     console.log("stopIt  invoked...")
     console.log(requestID);
     window.cancelAnimationFrame(requestID);
+    animating = false;
 }
 
 dotButton.addEventListener("click", drawDot);
